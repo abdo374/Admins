@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>إدارة المسابقة</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+</head>
+
+<body>
+
+<div id="login">
+
+<h2>تسجيل دخول المشرف</h2>
+
+<input id="user" placeholder="اسم الأدمن">
+<input id="pass" placeholder="كلمة السر" type="password">
+
+<button onclick="login()">دخول</button>
+
+</div>
+
+
+<div id="adminPanel" style="display:none">
+
+<h2>لوحة التحكم</h2>
+
+<input id="search" placeholder="بحث عن طالب" onkeyup="searchStudent()">
+<h3>تعديل بيانات الطالب</h3>
+
+<input id="editName" placeholder="الاسم">
+<input id="editSheikh" placeholder="الشيخ">
+<input id="editParts" placeholder="الأجزاء">
+
+<button onclick="saveEdit()">حفظ التعديل</button>
+
+<input type="hidden" id="editId">
+<table id="table">
+
+<thead>
+<tr>
+<th>الاسم</th>
+<th>الشيخ</th>
+<th>الأجزاء</th>
+<th>الحالة</th>
+<th>آخر تعديل</th>
+<th>تحكم</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+</div>
+<h3>إضافة طالب</h3>
+
+<input id="name" placeholder="اسم الطالب">
+<input id="sheikh" placeholder="الشيخ">
+<input id="parts" placeholder="عدد الأجزاء">
+
+<button onclick="addStudent()">إضافة</button>
+<script src="app.js"></script>
+
+</body>
+</html>
